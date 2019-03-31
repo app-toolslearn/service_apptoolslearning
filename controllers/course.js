@@ -1,11 +1,12 @@
 var md5 = require('md5');
-const Login = require('../models/login_model')
+const Course = require('../models/course_model')
 
-exports.Login = (user_name, user_password) => {
+exports.Course = (course_name, course_description) => {
     return new Promise((resolve, reject) => {
         try {
-            Login.login(user_name, md5(user_password), (err, rows) => {
+            Course.course(course_name, course_description, (err, rows) => {
                 resolve(rows)
+
             })
         } catch (error) {
 

@@ -1,11 +1,12 @@
 var md5 = require('md5');
-const Login = require('../models/login_model')
+const Admin = require('../models/admin_model')
 
-exports.Login = (user_name, user_password) => {
+exports.Admin = (admin_email, admin_password) => {
     return new Promise((resolve, reject) => {
         try {
-            Login.login(user_name, md5(user_password), (err, rows) => {
+            Admin.admin(admin_email, md5(admin_password), (err, rows) => {
                 resolve(rows)
+
             })
         } catch (error) {
 
