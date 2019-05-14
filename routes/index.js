@@ -108,5 +108,10 @@ router.post('/do_test', (req, res) => {
         res.json(rows)
     })
 });
+router.get('/hello', (req, res) => {
+        res.json("Hello")
+    })
+
+
 
 module.exports = router;

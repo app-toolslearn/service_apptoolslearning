@@ -14,3 +14,16 @@ exports.Lesson = (les_name, les_description, course_id, les_no) => {
         }
     })
 }
+exports.LessonByCourse = (course_id) => {
+    return new Promise((resolve, reject) => {
+        try {
+            Lesson.lessonByCourse(course_id, (err, rows) => {
+                resolve(rows)
+
+            })
+        } catch (err) {
+
+            reject(err)
+        }
+    })
+}

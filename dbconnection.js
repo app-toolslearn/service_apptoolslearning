@@ -4,7 +4,7 @@
      host: 'localhost',
      user: 'root',
      password: '',
-     database: 'app_toolslearning',
+     database: 'testApp',
      timezone: 'utc'
 
  });

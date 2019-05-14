@@ -14,3 +14,16 @@ exports.Question = (qs_title) => {
         }
     })
 }
+
+exports.QuestionByTestNumber = (testNumber) => {
+    return new Promise((resolve, reject) => {
+        try {
+            Question.questionByLeesonID(testNumber,(err,rows)=>{
+                resolve(rows);
+            })
+        } catch (error) {
+
+            reject(error);
+        }
+    })
+}
