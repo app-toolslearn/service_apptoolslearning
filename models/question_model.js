@@ -5,10 +5,22 @@ var Question = {
         return db.query("insert into question (qs_title) value (?) ", [qs_title], callback);
 
     },
-    questionByLeesonID: function(testNumber, callback) {
-        return db.query("SELECT * FROM question INNER JOIN test_choice ON question.qs_id = test_choice.qs_id WHERE test_choice.test_id = ?", [testNumber], callback);
+    questionByLeesonID: function(les_id, callback) {
+        return db.query("SELECT * FROM question where les_id = ?", [les_id], callback);
 
     },
+    questionByQsID: function(qs_id, callback) {
+        return db.query("SELECT * FROM question where qs_id = ?", [qs_id], callback);
+
+    },
+     currentQuizNumber: (user_id, lesson, type, number, callback) => {
+        return db.query(`SELECT *  FROM temp_quiz WHERE user_id= ? AND lesson= ? AND type=? AND number=? order by id`, [user_id, lesson, type, number], callbak)
+    },
+    choice:(qs_id,callback)=>{
+        return db.query(`SELECT * FROM test_choice WHERE qs_id = ?`, [qs_id], callback)
+
+    }
+    
 
 };
 module.exports = Question;
