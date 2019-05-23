@@ -27,3 +27,17 @@ exports.LessonByCourse = (course_id) => {
         }
     })
 }
+
+exports.LessonContentByLesId = (lesson_id) => {
+    return new Promise((resolve, reject) => {
+        try {
+            Lesson.lessonContentByLesId(lesson_id, (err, rows) => {
+                resolve(rows)
+
+            })
+        } catch (err) {
+
+            reject(err)
+        }
+    })
+}

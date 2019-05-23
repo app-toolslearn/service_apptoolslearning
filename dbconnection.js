@@ -1,12 +1,10 @@
- var mysql = require('mysql');
- var connection = mysql.createPool({
+var mysql = require("mysql");
+var connection = mysql.createPool({
+    host: "ssitconsultant.com",
+    user: "ssit_demo_tools",
+    password: "P@ssw0rd",
+    database: "app_toolslearning",
+    timezone: "utc"
+});
 
-     host: 'localhost',
-     user: 'root',
-     password: '',
-     database: 'testApp',
-     timezone: 'utc'
-
- });
-
- module.exports = connection;
+module.exports = connection;

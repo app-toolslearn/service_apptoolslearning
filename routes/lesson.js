@@ -12,5 +12,13 @@ router.post('/lessonByCourseID',(req,res)=>{
     })
  })
 
+ router.post('/lessonContentByLesId',(req,res)=>{    
+    console.log(req.body.lesson_id);
+    
+    lessonContorller.LessonContentByLesId(req.body.lesson_id).then(rows =>{
+        res.json(rows);
+    })
+ })
+
 
 module.exports = router;

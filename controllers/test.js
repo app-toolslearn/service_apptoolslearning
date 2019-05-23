@@ -14,10 +14,40 @@ exports.Test = (test_name, les_id, test_type) => {
 
 
 }
-exports.TestLessonID = (les_id) => {
+exports.GetAllTest = () => {
     return new Promise((resolve, reject) => {
         try {
-            Test.testByLessonId(les_id, (err, rows) => {
+            Test.getAllTest( (err, rows) => {
+                resolve(rows)
+            })
+
+        } catch (error) {
+            reject(error)
+        }
+    })
+
+
+}
+
+exports.ExerciseLessonId = (les_id) => {
+    return new Promise((resolve, reject) => {
+        try {
+            Test.exerciseByLessonId(les_id, (err, rows) => {
+                resolve(rows)
+            })
+
+        } catch (error) {
+            reject(error)
+        }
+    })
+
+
+}
+
+exports.TestChoiceByTestId = (les_id) => {
+    return new Promise((resolve, reject) => {
+        try {
+            Test.testChoiceByTestId(les_id, (err, rows) => {
                 resolve(rows)
             })
 
