@@ -6,7 +6,7 @@ var Lesson = {
 
     },
     lessonByCourse: function(course_id, callback) {        
-        return db.query("SELECT * FROM lesson WHERE course_id = ?", [course_id], callback);
+        return db.query("SELECT * FROM lesson left join study_log log on lesson.les_id = log.les_id WHERE course_id = ?", [course_id], callback);
     },
     lessonContentByLesId: function(lesson_id, callback) {        
         return db.query("SELECT * FROM lesson_content WHERE lesson_id = ?", [lesson_id], callback);

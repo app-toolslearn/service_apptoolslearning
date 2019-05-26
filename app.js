@@ -7,6 +7,7 @@ var question = require("./routes/question");
 var longin = require("./routes/login");
 var register = require("./routes/register");
 var test = require("./routes/test");
+var studyLog = require("./routes/studyLog");
 var cors = require("cors");
 
 var message = require("./routes/message");
@@ -21,6 +22,7 @@ app.use("/question", question);
 app.use("/longin", longin);
 app.use("/register", register);
 app.use("/test", test);
+app.use("/studyLog", studyLog);
 
 app.use("/message", message);
 
